@@ -1,16 +1,20 @@
 import time
 
-A = [64, 25, 12, 22, 11]
 
-for i in range(len(A)-1):
+
+nums = [17, 30, 41, 15, 7, 12, 23, 25, 12]
+
+for i in range(len(nums)-1):
     
+
     min_idx = i
-    for j in range(i+1, len(A)):
-        if A[min_idx] > A[j]:
+    for j in range(i+1, len(nums)):
+        if nums[min_idx] > nums[j]:
             min_idx = j
-   
-    A[i], A[min_idx] = A[min_idx], A[i]
+    
+    nums[i], nums[min_idx] = nums[min_idx], nums[i]
+    print(f"Min Number {nums[i]}")
 
 print ("Sorted array")
-for i in range(len(A)):
-    print(A[i],end=" ") 
+for i in range(len(nums)):
+    print(nums[i],end=" ")
