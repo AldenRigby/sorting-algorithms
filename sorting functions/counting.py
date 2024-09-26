@@ -19,7 +19,6 @@ while go:
         print("That isn't a valid list.")
 #userInput should now be a list of numbers
 def counting(arr):
-    #instead of making multiple arrays, maybe make a dictionary?
     start = time.time()
     tempDict = {}
     tempArr = []
