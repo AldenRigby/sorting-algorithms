@@ -20,10 +20,13 @@ while go:
 #userInput should now be a list of numbers
 def counting(arr):
     start = time.time()
+    #setup
     comparisons = 0
     tempDict = {}
     tempArr = []
     tempArrIndexes = []
+
+    #add all unique values to the dictionary
     for i in arr:
         comparisons = comparisons + 1
         if i not in tempArr:
@@ -34,6 +37,7 @@ def counting(arr):
             tempDict[i][0] = tempDict[i][0] + 1
             tempArrIndexes[tempArr.index(i)] = tempArrIndexes[tempArr.index(i)] + 1
 
+    #setup the list
     for i in range(len(list(tempDict.keys()))):
         comparisons = comparisons + 1
         tempArr[i] = list(tempDict.keys())[i]
@@ -56,6 +60,7 @@ def counting(arr):
     print(tempArr, tempArrIndexes)
 
     tempArrFinalIndex.append(0)
+    #get the indexes array
     for i in range(len(tempArrIndexes)):
         comparisons = comparisons + 1
         tempArrFinalIndex[i+1] = tempArrFinalIndex[i]+tempArrFinalIndex[i+1]
