@@ -1,5 +1,6 @@
 #made by Alden 1 1 1 3 2 4 9 9 7
 import random
+import time
 go = True
 userInput = []
 while go:
@@ -19,6 +20,7 @@ while go:
 #userInput should now be a list of numbers
 def counting(arr):
     #instead of making multiple arrays, maybe make a dictionary?
+    start = time.time()
     tempDict = {}
     tempArr = []
     tempArrIndexes = []
@@ -67,5 +69,7 @@ def counting(arr):
             tempArrIndexes[i] = tempArrIndexes[i] - 1
             print(finalArr, tempArrIndexes, tempArrFinalIndex[i])
     print(finalArr)
+    end = time.time()
+    print("Time: " + str(int((end-start)*1000)) + " milliseconds")
 counting(userInput)
 #1 1 1 1 3 3 4 9 2 3
