@@ -1,4 +1,4 @@
-#use this chunk of code to get an input from the user
+#made by Alden 1 1 1 3 2 4 9 9 7
 import random
 import time
 go = True
@@ -18,8 +18,7 @@ while go:
     except:
         print("That isn't a valid list.")
 #userInput should now be a list of numbers
-
-def counting(arr): #by alden
+def counting(arr):
     start = time.time()
     tempDict = {}
     tempArr = []
@@ -71,25 +70,5 @@ def counting(arr): #by alden
     print(finalArr)
     end = time.time()
     print("Time: " + str(int((end-start)*1000)) + " milliseconds")
-
-#start
-go = True
-while go: #oops this isn't working for some reason ill deal with it later
-    print("Bubble\nCounting\nInsertion\nSelection")
-    tempUserInput = input("What sorting algorithm would you like to use? ").lower()
-    if tempUserInput not in ["bubble", "counting", "insertion", "selection"]:
-        tempUserInput = input("Enter a valid sorting algorithm: ")
-    else:
-        go = False
-        if tempUserInput == "bubble":
-            #bubble(userInput)
-            pass
-        elif tempUserInput == "counting":
-            counting(userInput)
-            pass
-        elif tempUserInput == "counting":
-            #insertion(userInput)
-            pass
-        elif tempUserInput == "counting":
-            #selection(userInput)
-            pass
+counting(userInput)
+#1 1 1 1 3 3 4 9 2 3
