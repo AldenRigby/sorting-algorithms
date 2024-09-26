@@ -18,13 +18,15 @@ while go:
     except:
         print("That isn't a valid list.")
 
-def insertion(arr):
+def insertion(arr): # by alden
     start = time.time()
     tempArr = arr.copy()
     swaps = 0
+    #repeat as many times as the length of the array
     for i in range(len(tempArr)):
         print(tempArr[i], end=" ")
         for j in reversed(range(i)):
+            #if the value behind is greater, move it forward. continue backwords through the array
             if tempArr[j] > tempArr[j+1]:
                 tempArr[j], tempArr[j+1] = tempArr[j+1], tempArr[j]
                 swaps = swaps + 1

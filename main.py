@@ -19,12 +19,15 @@ while go:
         print("That isn't a valid list.")
 #userInput should now be a list of numbers
 
-def counting(arr): # by alden
+def counting(arr):
     start = time.time()
+    #setup
     comparisons = 0
     tempDict = {}
     tempArr = []
     tempArrIndexes = []
+
+    #add all unique values to the dictionary
     for i in arr:
         comparisons = comparisons + 1
         if i not in tempArr:
@@ -35,6 +38,7 @@ def counting(arr): # by alden
             tempDict[i][0] = tempDict[i][0] + 1
             tempArrIndexes[tempArr.index(i)] = tempArrIndexes[tempArr.index(i)] + 1
 
+    #setup the list
     for i in range(len(list(tempDict.keys()))):
         comparisons = comparisons + 1
         tempArr[i] = list(tempDict.keys())[i]
@@ -57,6 +61,7 @@ def counting(arr): # by alden
     print(tempArr, tempArrIndexes)
 
     tempArrFinalIndex.append(0)
+    #get the indexes array
     for i in range(len(tempArrIndexes)):
         comparisons = comparisons + 1
         tempArrFinalIndex[i+1] = tempArrFinalIndex[i]+tempArrFinalIndex[i+1]
@@ -84,9 +89,11 @@ def insertion(arr): # by alden
     start = time.time()
     tempArr = arr.copy()
     swaps = 0
+    #repeat as many times as the length of the array
     for i in range(len(tempArr)):
         print(tempArr[i], end=" ")
         for j in reversed(range(i)):
+            #if the value behind is greater, move it forward. continue backwords through the array
             if tempArr[j] > tempArr[j+1]:
                 tempArr[j], tempArr[j+1] = tempArr[j+1], tempArr[j]
                 swaps = swaps + 1
