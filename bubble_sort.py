@@ -20,7 +20,28 @@ def bubbleSort(arr):
         if (swapped == False):
             break
 
+def bubbleSortsteps(arr):
+    # the code is checking how long the list is.
+    n = len(arr)
 
+    # Now it sets a for loop to run for ever element in the list.
+    for i in range(n):
+        # This is used to see if the code is done, if a swap happend then we know that it isnt fully sorted,
+        # When the list is fully sorted the value will not be changed, and the code will be done.
+        swapped = False
+
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater
+            # than the next element
+
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        if (swapped == False):
+            break
 
 
 
