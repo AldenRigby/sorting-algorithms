@@ -105,9 +105,10 @@ def insertion(arr): # by alden
 #start
 go = True
 while go: #oops this isn't working for some reason ill deal with it later
-    print("Bubble\nCounting\nInsertion\nSelection")
+    print("\nBubble\nCounting\nInsertion\nSelection")
     tempUserInput = input("What sorting algorithm would you like to use? ").lower()
     if tempUserInput not in ["bubble", "counting", "insertion", "selection"]:
+        print("\nBubble\nCounting\nInsertion\nSelection")
         tempUserInput = input("Enter a valid sorting algorithm: ")
     else:
         go = False
