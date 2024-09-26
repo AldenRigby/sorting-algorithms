@@ -20,10 +20,12 @@ while go:
 #userInput should now be a list of numbers
 def counting(arr):
     start = time.time()
+    comparisons = 0
     tempDict = {}
     tempArr = []
     tempArrIndexes = []
     for i in arr:
+        comparisons = comparisons + 1
         if i not in tempArr:
             tempArr.append(i)
             tempArrIndexes.append(1)
@@ -33,6 +35,7 @@ def counting(arr):
             tempArrIndexes[tempArr.index(i)] = tempArrIndexes[tempArr.index(i)] + 1
 
     for i in range(len(list(tempDict.keys()))):
+        comparisons = comparisons + 1
         tempArr[i] = list(tempDict.keys())[i]
         tempArrIndexes[i] = tempDict[list(tempDict.keys())[i]][0]
 
@@ -44,6 +47,7 @@ def counting(arr):
     tempDict = {i: tempDict[i] for i in myKeys}
 
     for i in range(len(list(tempDict.keys()))):
+        comparisons = comparisons + 1
         tempArr[i] = list(tempDict.keys())[i]
         tempArrIndexes[i] = tempDict[list(tempDict.keys())[i]][0]
 
@@ -53,6 +57,7 @@ def counting(arr):
 
     tempArrFinalIndex.append(0)
     for i in range(len(tempArrIndexes)):
+        comparisons = comparisons + 1
         tempArrFinalIndex[i+1] = tempArrFinalIndex[i]+tempArrFinalIndex[i+1]
     tempArrFinalIndex.pop()
 
@@ -61,14 +66,17 @@ def counting(arr):
     #below sorts
     finalArr = arr.copy()
     for i in range(len(finalArr)):
+        comparisons = comparisons + 1
         finalArr[i] = 0
     for i in range(len(tempArrFinalIndex)):
         for j in range(tempArrIndexes[i]):
+            comparisons = comparisons + 1
             finalArr[tempArrFinalIndex[i]-j-1] = tempArr[i]
             tempArrIndexes[i] = tempArrIndexes[i] - 1
             print(finalArr, tempArrIndexes, tempArrFinalIndex[i])
     print(finalArr)
     end = time.time()
     print("Time: " + str(int((end-start)*1000)) + " milliseconds")
+    print("Comparisons: " + str(comparisons))
 counting(userInput)
 #1 1 1 1 3 3 4 9 2 3
