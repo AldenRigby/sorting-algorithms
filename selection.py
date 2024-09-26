@@ -2,14 +2,12 @@ import time
 import random
 
 
-nums = []
-for i in range(1000):
-    nums.append(random.randint(1,1000))
+nums = [64, 25, 12, 22, 11]
 print(nums)
 
 start = time.time()
+
 for i in range(len(nums)-1):
-    
 
     min_idx = i
     for j in range(i+1, len(nums)):
