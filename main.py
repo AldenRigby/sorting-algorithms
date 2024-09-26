@@ -19,12 +19,14 @@ while go:
         print("That isn't a valid list.")
 #userInput should now be a list of numbers
 
-def counting(arr): #by alden
+def counting(arr): # by alden
     start = time.time()
+    comparisons = 0
     tempDict = {}
     tempArr = []
     tempArrIndexes = []
     for i in arr:
+        comparisons = comparisons + 1
         if i not in tempArr:
             tempArr.append(i)
             tempArrIndexes.append(1)
@@ -34,6 +36,7 @@ def counting(arr): #by alden
             tempArrIndexes[tempArr.index(i)] = tempArrIndexes[tempArr.index(i)] + 1
 
     for i in range(len(list(tempDict.keys()))):
+        comparisons = comparisons + 1
         tempArr[i] = list(tempDict.keys())[i]
         tempArrIndexes[i] = tempDict[list(tempDict.keys())[i]][0]
 
@@ -45,6 +48,7 @@ def counting(arr): #by alden
     tempDict = {i: tempDict[i] for i in myKeys}
 
     for i in range(len(list(tempDict.keys()))):
+        comparisons = comparisons + 1
         tempArr[i] = list(tempDict.keys())[i]
         tempArrIndexes[i] = tempDict[list(tempDict.keys())[i]][0]
 
@@ -54,6 +58,7 @@ def counting(arr): #by alden
 
     tempArrFinalIndex.append(0)
     for i in range(len(tempArrIndexes)):
+        comparisons = comparisons + 1
         tempArrFinalIndex[i+1] = tempArrFinalIndex[i]+tempArrFinalIndex[i+1]
     tempArrFinalIndex.pop()
 
@@ -62,15 +67,33 @@ def counting(arr): #by alden
     #below sorts
     finalArr = arr.copy()
     for i in range(len(finalArr)):
+        comparisons = comparisons + 1
         finalArr[i] = 0
     for i in range(len(tempArrFinalIndex)):
         for j in range(tempArrIndexes[i]):
+            comparisons = comparisons + 1
             finalArr[tempArrFinalIndex[i]-j-1] = tempArr[i]
             tempArrIndexes[i] = tempArrIndexes[i] - 1
             print(finalArr, tempArrIndexes, tempArrFinalIndex[i])
     print(finalArr)
     end = time.time()
     print("Time: " + str(int((end-start)*1000)) + " milliseconds")
+    print("Comparisons: " + str(comparisons))
+
+def insertion(arr): # by alden
+    start = time.time()
+    tempArr = arr.copy()
+    swaps = 0
+    for i in range(len(tempArr)):
+        print(tempArr[i], end=" ")
+        for j in reversed(range(i)):
+            if tempArr[j] > tempArr[j+1]:
+                tempArr[j], tempArr[j+1] = tempArr[j+1], tempArr[j]
+                swaps = swaps + 1
+        print(tempArr)
+    end = time.time()
+    print("Time: " + str(int((end-start)*1000)) + " milliseconds")
+    print("Number of swaps: " + str(swaps))
 
 #start
 go = True
@@ -86,10 +109,8 @@ while go: #oops this isn't working for some reason ill deal with it later
             pass
         elif tempUserInput == "counting":
             counting(userInput)
-            pass
-        elif tempUserInput == "counting":
-            #insertion(userInput)
-            pass
-        elif tempUserInput == "counting":
+        elif tempUserInput == "insertion":
+            insertion(userInput)
+        elif tempUserInput == "selection":
             #selection(userInput)
             pass
