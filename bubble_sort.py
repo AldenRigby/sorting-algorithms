@@ -7,7 +7,7 @@ for i in range(amount):
     array.append(random.randint(1,10000))
 print('The list has over', amount,"Items in the list")
 
-start = time.time()
+
 
 def bubbleSort(array):
     n = len(array)
@@ -48,6 +48,7 @@ def bubbleSortsteps(array):
 
 
 alg = int(input('Would you like to see the steps\n 1(yes) 2(no)\n'))
+start = time.time()
 if alg == 1:
     bubbleSortsteps(array)
 else:
