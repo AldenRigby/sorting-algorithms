@@ -1,3 +1,5 @@
+#Made by Samuel Ellis, Sam Rico, and Alden Rigby
+
 #use this chunk of code to get an input from the user
 import random
 import time
@@ -19,7 +21,7 @@ while go:
         print("That isn't a valid list.")
 #userInput should now be a list of numbers
 
-def counting(arr):
+def counting(arr): # by alden
     start = time.time()
     #setup
     comparisons = 0
@@ -104,10 +106,11 @@ def insertion(arr): # by alden
 
 #start
 go = True
-while go: #oops this isn't working for some reason ill deal with it later
-    print("Bubble\nCounting\nInsertion\nSelection")
+while go: # ask player for what algorithm they want
+    print("\nBubble\nCounting\nInsertion\nSelection")
     tempUserInput = input("What sorting algorithm would you like to use? ").lower()
     if tempUserInput not in ["bubble", "counting", "insertion", "selection"]:
+        print("\nBubble\nCounting\nInsertion\nSelection")
         tempUserInput = input("Enter a valid sorting algorithm: ")
     else:
         go = False
