@@ -20,4 +20,4 @@ end = time.time()
 print ("Sorted array")
 for i in range(len(nums)):
     print(nums[i],end=" ")
-print("\n The program takes", round(end - start, 10), "seconds.")
+print("\nThe program takes", round(end - start, 10), "seconds.")
