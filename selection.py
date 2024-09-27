@@ -2,7 +2,7 @@ import time
 import random
 
 
-nums = [64, 25, 12, 22, 11]
+nums = [5, 9, 10, 12, 13, 7, 5,]
 print(nums)
 
 start = time.time()
