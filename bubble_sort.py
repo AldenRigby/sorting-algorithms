@@ -1,28 +1,29 @@
 import time
 import random
  
-arr=[]
+array=[]
 amount = int(input("How many items would you like to sort\n:"))
 for i in range(amount):
-    arr.append(random.randint(1,100))
+    array.append(random.randint(1,10000))
 print('The list has over', amount,"Items in the list")
 
 start = time.time()
 
-def bubbleSort(arr):
-    n = len(arr)
+def bubbleSort(array):
+    n = len(array)
     for i in range(n):
         swapped = False
         for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+            if array[j] > array[j+1]:
+                array[j], array[j+1] = array[j+1], array[j]
                 swapped = True
         if (swapped == False):
             break
 
-def bubbleSortsteps(arr):
+def bubbleSortsteps(array):
     # the code is checking how long the list is.
-    n = len(arr)
+    n = len(array)
+    print(f"Length of arrayay: {array}")
 
     # Now it sets a for loop to run for ever element in the list.
     for i in range(n):
@@ -33,22 +34,27 @@ def bubbleSortsteps(arr):
         # Last i elements are already in place
         for j in range(0, n-i-1):
 
-            # Traverse the array from 0 to n-i-1
-            # Swap if the element found is greater
-            # than the next element
+            # Look through the arrayay from 0 to n-i-1
+            # Swap if the other number is greater
+            # than the move to the next number
 
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+            if array[j] > array[j+1]:
+                print(f"  Swapping: {array[j]} and {array[j + 1]}")
+                array[j], array[j+1] = array[j+1], array[j]
                 swapped = True
+        print(f"Current sublist: {array[:n-i]} + {array[n-i:]}")
         if (swapped == False):
             break
 
 
+alg = int(input('Would you like to see the steps\n 1(yes) 2(no)\n'))
+if alg == 1:
+    bubbleSortsteps(array)
+else:
+    bubbleSort(array)
 
-bubbleSort(arr)
-
-print("Sorted array:\n")
-for i in range(len(arr)):
-    print("%d" % arr[i], end=" ")
+print("Sorted arrayay:\n")
+for i in range(len(array)):
+    print("%d" % array[i], end=" ")
 endtime = time.time()
 print("\n time the program takes", round(endtime - start, 3),"Seconds")
