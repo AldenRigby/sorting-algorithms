@@ -14,7 +14,7 @@ start = time.time()
 #create swap count variable that tracks the swaps in the sorting process
 swap_count = 0
 
-for i in range(len(nums) - 1): #iterate through the list except the last one
+for i in range(len(nums) - 1): #iterate through the list except the last
     min_idx = i #initialize min_idx
     for j in range(i + 1, len(nums)): #do if new smalles element is found
         if nums[min_idx] > nums[j]: #check smallest element
