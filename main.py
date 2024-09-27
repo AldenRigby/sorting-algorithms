@@ -1,3 +1,5 @@
+#Made by Samuel Ellis, Sam Rico, and Alden Rigby
+
 #use this chunk of code to get an input from the user
 import random
 import time
