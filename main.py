@@ -10,7 +10,7 @@ while go:
         tempUserInput = input("Enter a set of numbers, separated by spaces. Leave blank for a random list. ")
         if tempUserInput == "":
             userInput = []
-            for i in range(10):
+            for i in range(30):
                 userInput.append(random.randint(0,9))
         else:
             tempUserInput = tempUserInput.split(" ")
@@ -104,6 +104,87 @@ def insertion(arr): # by alden
     print("Time: " + str(int((end-start)*1000)) + " milliseconds")
     print("Number of swaps: " + str(swaps))
 
+def selection(arr): # by sam rico
+    nums = arr
+    #print original array
+    print("Original list:", nums)
+
+    #start the timer
+    start = time.time()
+
+    #create swap count variable that tracks the swaps in the sorting process
+    swap_count = 0
+
+    for i in range(len(nums) - 1): #iterate through the list except the last
+        min_idx = i #initialize min_idx
+        for j in range(i + 1, len(nums)): #do if new smalles element is found
+            if nums[min_idx] > nums[j]: #check smallest element
+                min_idx = j #updates smallest element
+                
+        if min_idx != i:
+            nums[i], nums[min_idx] = nums[min_idx], nums[i] #swap elements
+            swap_count += 1  # Increment the swap counter
+            print(f"Swapped indices {i} and {min_idx}: {nums}")
+
+    #stop the timer
+    end = time.time()
+
+    print("Sorted array:", nums)
+    print(f"\nTotal swaps: {swap_count}")
+    print("Time: " + str(int((end-start)*1000)) + " milliseconds")
+
+def bubbleSort(array):
+    n = len(array)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n-i-1):
+            if array[j] > array[j+1]:
+                array[j], array[j+1] = array[j+1], array[j]
+                swapped = True
+        if (swapped == False):
+            break
+
+def bubbleSortsteps(array):
+    # the code is checking how long the list is.
+    n = len(array)
+    print(f"Length of arrayay: {array}")
+
+    # Now it sets a for loop to run for ever element in the list.
+    for i in range(n):
+        # This is used to see if the code is done, if a swap happend then we know that it isnt fully sorted,
+        # When the list is fully sorted the value will not be changed, and the code will be done.
+        swapped = False
+
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+
+            # Look through the arrayay from 0 to n-i-1
+            # Swap if the other number is greater
+            # than the move to the next number
+
+            if array[j] > array[j+1]:
+                print(f"  Swapping: {array[j]} and {array[j + 1]}")
+                array[j], array[j+1] = array[j+1], array[j]
+                swapped = True
+        print(f"Current sublist: {array[:n-i]} + {array[n-i:]}")
+        if (swapped == False):
+            break
+
+def bubble(array):
+    alg = int(input('Would you like to see the steps\n 1(yes) 2(no)\n'))
+    start = time.time()
+    if alg == 1:
+        bubbleSortsteps(array)
+    else:
+        bubbleSort(array)
+    print("Sorted arrayay:\n")
+    for i in range(len(array)):
+        print("%d" % array[i], end=" ")
+    endtime = time.time()
+    print("\n time the program takes", round(endtime - start, 3),"Seconds")
+
+#finish updating insertion, almost done
+
 #start
 go = True
 while go: # ask player for what algorithm they want
@@ -115,12 +196,10 @@ while go: # ask player for what algorithm they want
     else:
         go = False
         if tempUserInput == "bubble":
-            #bubble(userInput)
-            pass
+            bubble(userInput)
         elif tempUserInput == "counting":
             counting(userInput)
         elif tempUserInput == "insertion":
             insertion(userInput)
         elif tempUserInput == "selection":
-            #selection(userInput)
-            pass
+            selection(userInput)

@@ -24,13 +24,15 @@ def insertion(arr): # by alden
     swaps = 0
     #repeat as many times as the length of the array
     for i in range(len(tempArr)):
-        print(tempArr[i], end=" ")
+        print(tempArr[i])
         for j in reversed(range(i)):
             #if the value behind is greater, move it forward. continue backwords through the array
             if tempArr[j] > tempArr[j+1]:
                 tempArr[j], tempArr[j+1] = tempArr[j+1], tempArr[j]
                 swaps = swaps + 1
-        print(tempArr)
+                print(tempArr)
+            else:
+                continue
     end = time.time()
     print("Time: " + str(int((end-start)*1000)) + " milliseconds")
     print("Number of swaps: " + str(swaps))
