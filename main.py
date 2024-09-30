@@ -99,7 +99,9 @@ def insertion(arr): # by alden
             if tempArr[j] > tempArr[j+1]:
                 tempArr[j], tempArr[j+1] = tempArr[j+1], tempArr[j]
                 swaps = swaps + 1
-        print(tempArr)
+            else:
+                continue
+            print(tempArr)
     end = time.time()
     print("Time: " + str(int((end-start)*1000)) + " milliseconds")
     print("Number of swaps: " + str(swaps))
@@ -182,8 +184,6 @@ def bubble(array):
         print("%d" % array[i], end=" ")
     endtime = time.time()
     print("\n time the program takes", round(endtime - start, 3),"Seconds")
-
-#finish updating insertion, almost done
 
 #start
 go = True
