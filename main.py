@@ -133,7 +133,7 @@ def selection(arr): # by sam rico
     print(f"\nTotal swaps: {swap_count}")
     print("Time: " + str(int((end-start)*1000)) + " milliseconds")
 
-def bubbleSort(array):
+def bubbleSort(array): # by sam ellis
     n = len(array)
     for i in range(n):
         swapped = False
