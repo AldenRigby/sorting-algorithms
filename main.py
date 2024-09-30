@@ -107,7 +107,7 @@ def insertion(arr): # by alden
     print("Number of swaps: " + str(swaps))
 
 def selection(arr): # by sam rico
-    nums = arr
+    nums = arr.copy()
     #print original array
     print("Original list:", nums)
 
@@ -172,7 +172,8 @@ def bubbleSortsteps(array):
         if (swapped == False):
             break
 
-def bubble(array):
+def bubble(arr):
+    array = arr.copy()
     alg = int(input('Would you like to see the steps\n 1(yes) 2(no)\n'))
     start = time.time()
     if alg == 1:
@@ -194,7 +195,6 @@ while go: # ask player for what algorithm they want
         print("\nBubble\nCounting\nInsertion\nSelection")
         tempUserInput = input("Enter a valid sorting algorithm: ")
     else:
-        go = False
         if tempUserInput == "bubble":
             bubble(userInput)
         elif tempUserInput == "counting":
