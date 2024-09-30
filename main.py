@@ -189,9 +189,9 @@ def bubble(arr):
 #start
 go = True
 while go: # ask player for what algorithm they want
-    print("\nBubble\nCounting\nInsertion\nSelection")
+    print("\nBubble\nCounting\nInsertion\nSelection\nEnd Program")
     tempUserInput = input("What sorting algorithm would you like to use? ").lower()
-    if tempUserInput not in ["bubble", "counting", "insertion", "selection"]:
+    if tempUserInput not in ["bubble", "counting", "insertion", "selection", "end program"]:
         print("\nBubble\nCounting\nInsertion\nSelection")
         tempUserInput = input("Enter a valid sorting algorithm: ")
     else:
@@ -203,3 +203,5 @@ while go: # ask player for what algorithm they want
             insertion(userInput)
         elif tempUserInput == "selection":
             selection(userInput)
+        else:
+            quit()
